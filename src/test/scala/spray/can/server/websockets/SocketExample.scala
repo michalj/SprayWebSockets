@@ -3,21 +3,17 @@ package spray.can.server.websockets
 import org.scalatest.FreeSpec
 import org.scalatest.concurrent.Eventually
 import akka.io.{Tcp, IO}
-import spray.can.{Http}
-import spray.can.server.ServerSettings
-import akka.actor.{ActorRef, ActorSystem, Actor}
+import akka.actor.{ActorSystem, Actor}
 import spray.can.server.websockets.model.{OpCode, Frame}
 import spray.can.server.websockets.model.OpCode.Text
 import akka.util.ByteString
 import akka.testkit.TestActorRef
-import java.net.InetSocketAddress
-import spray.http.{HttpResponse, HttpHeaders, HttpMethods, HttpRequest}
-import akka.io.Tcp.{Register, Connected}
-import spray.can.client.ClientConnectionSettings
-import scala.concurrent.Await
-import akka.pattern._
+import spray.http.{HttpResponse, HttpRequest, HttpMethods}
+import akka.io.Tcp.Register
 import scala.concurrent.duration._
-import HttpHeaders._
+import spray.http.HttpHeaders.{Connection, RawHeader, Host}
+import spray.can.Http
+
 class SocketExample extends FreeSpec with Eventually{
 
   "Hello World" in {

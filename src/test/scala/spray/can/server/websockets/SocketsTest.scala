@@ -6,21 +6,20 @@ import org.scalatest.FreeSpec
 import akka.actor._
 import concurrent.duration._
 import scala.concurrent.{Promise, Await}
-import akka.util.{ByteString, Timeout}
-import spray.http.{HttpResponse, HttpHeaders, HttpMethods, HttpRequest}
-import akka.testkit.TestActorRef
+import akka.util.ByteString
+import spray.http.{HttpHeaders, HttpResponse, HttpRequest, HttpMethods}
 import org.scalatest.concurrent.Eventually
 
-import spray.can.Http
 import scala.Some
 import Sockets.{ClientPipelineStage, ServerPipelineStage, RoundTripTime}
 import akka.io.IO
 import akka.io.Tcp.Connected
 import akka.io.Tcp.Register
-import spray.can.server.ServerSettings
-import spray.can.client.ClientConnectionSettings
 import spray.io.{ServerSSLEngineProvider, ClientSSLEngineProvider, EmptyPipelineStage}
 import javax.net.ssl.SSLContext
+import spray.can.Http
+import spray.can.server.ServerSettings
+import spray.can.client.ClientConnectionSettings
 
 class SocketsTest extends FreeSpec with Eventually{
   implicit def string2bytestring(s: String) = ByteString(s)

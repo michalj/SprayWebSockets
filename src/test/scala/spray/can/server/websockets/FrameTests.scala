@@ -3,10 +3,9 @@ package spray.can.server.websockets
 import model._
 import model.Frame.Successful
 import org.scalatest.FreeSpec
-import java.nio.ByteBuffer
 import akka.util.ByteString
 import util.Random
-import java.io.{DataInputStream, ObjectInputStream, ByteArrayInputStream}
+import java.io.{DataInputStream, ByteArrayInputStream}
 
 class FrameTests extends FreeSpec{
   implicit def byteArrayToBuffer(array: Array[Byte]) = ByteString(array)

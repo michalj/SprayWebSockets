@@ -1,10 +1,7 @@
 package spray.can.server.websockets
 
-import model._
-import model.Frame.Successful
 import org.scalatest.FreeSpec
 import akka.util.ByteString
-import util.Random
 
 class UberBufferTest extends FreeSpec{
   "manual testing" in {

@@ -1,18 +1,15 @@
 package spray.can.server.websockets
 
-import akka.actor.{ActorSystem, ActorRef, Actor}
+import akka.actor.{ActorSystem, ActorRef}
 import akka.util.ByteString
-import akka.io.{PipePair, SslTlsSupport, TcpPipelineHandler, Tcp}
 import akka.io.Tcp.{Register, Connected}
-import akka.io.TcpPipelineHandler.WithinActorContext
 import akka.testkit.TestActorRef
 import spray.can.server.websockets.model.Frame
-import spray.io._
 import akka.io.Tcp.Connected
 import akka.io.Tcp.Register
 import spray.can.server.websockets.model.Frame.Successful
 
-import org.scalatest.time.{Seconds, Span}
+import org.scalatest.time.Seconds
 import org.scalatest.concurrent.Eventually
 import javax.net.ssl.{SSLEngine, TrustManagerFactory, KeyManagerFactory, SSLContext}
 import java.security.{SecureRandom, KeyStore}

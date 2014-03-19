@@ -3,15 +3,14 @@ package spray.can.server.websockets
 import org.scalatest.FreeSpec
 import org.scalatest.concurrent.Eventually
 import akka.io.{Tcp, IO}
-import spray.can.Http
-import akka.actor.{ActorRef, Props, ActorSystem, Actor}
-import spray.can.server.websockets.model.{OpCode, Frame}
+import akka.actor.{Props, ActorSystem, Actor}
+import spray.can.server.websockets.model.Frame
 import spray.can.server.websockets.model.OpCode.{Binary, Text}
-import akka.util.ByteString
-import spray.http.{HttpResponse, HttpHeaders, HttpMethods, HttpRequest}
+import spray.http.HttpRequest
 import akka.io.Tcp.Register
 import scala.concurrent.duration._
-import spray.http.HttpHeaders.{Connection, RawHeader, Host}
+import spray.http.HttpHeaders.{Connection, Host}
+import spray.can.Http
 
 class AutoBahn extends FreeSpec with Eventually{
 
